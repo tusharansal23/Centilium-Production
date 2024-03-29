@@ -7,7 +7,7 @@ function Cancel() {
       <p> 
         We appreciate your business! If you have any questions, please email us 
         at 
-        <a href="mailto:tusharansal23@gmail.com">orders@example.com</a>. 
+        <a href="mailto:tusharansal23@gmail.com">support@centiliumimmigration.com</a>. 
       </p> 
       <div> 
         <button> Go to Home page</button> 

@@ -92,7 +92,7 @@ const SetUpMeeting = ({ setShowButton }) => {
 
   const scheduleReminder = async () => {
         try {
-          const response = await fetch('http://localhost:4242/send-email', {
+          const response = await fetch('https://centilium-backend-production.onrender.com/send-email', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -131,7 +131,7 @@ const SetUpMeeting = ({ setShowButton }) => {
       {/* <Header showButton={false}/> */}
       <div className="meeting-outer-box container d-flex justify-content-center align-items-center w-100">
         <div className="meeting-inner-box border p-4" style={{ color: 'mediumblue', backgroundColor: 'lavender' }}>
-          <h1 className="text-center mb-4">Meeting Page</h1>
+          <h1 className="text-center mb-4">Organize Meeting</h1>
           <div className='d-flex justify-content-space-around'>
           <div className="mb-3">
              <label className="form-label">User Type:</label>

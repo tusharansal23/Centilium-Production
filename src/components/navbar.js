@@ -24,7 +24,7 @@ const items = [
     if (stripe) {
       // Call your server to create a PaymentIntent
       console.log("items = ",items);
-      const response = await fetch('http://localhost:4000/create-payment-intent', {
+      const response = await fetch('https://centilium-backend-production.onrender.com/create-payment-intent', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

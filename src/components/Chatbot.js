@@ -25,7 +25,7 @@ const Chatbot = () => {
   const generateResponse = async (userMessage) => {
     
     try {
-        const response = await fetch("http://localhost:4242/ask", {
+        const response = await fetch("https://centilium-backend-production.onrender.com/ask", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

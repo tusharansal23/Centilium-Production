@@ -22,7 +22,7 @@ const SetUpMeeting = () => {
     try {
       const job = schedule.scheduleJob(selectedDateTime, async () => {
         // Send reminder email using fetch
-        const response = await fetch('http://localhost:4242/send-email', {
+        const response = await fetch('https://centilium-backend-production.onrender.com/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

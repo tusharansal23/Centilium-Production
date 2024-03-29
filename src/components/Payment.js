@@ -9,7 +9,7 @@ function Payment(props) {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:4000/create-payment-intent")
+    fetch("https://centilium-backend-production.onrender.com/create-payment-intent")
       .then((res) => res.json())
       .then(({clientSecret}) => setClientSecret(clientSecret));
   }, []);

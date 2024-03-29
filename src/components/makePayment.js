@@ -28,7 +28,7 @@ console.log(productArray);
     }; 
  
     const response = await fetch( 
-      "http://localhost:4242/create-checkout-session", 
+      "https://centilium-backend-production.onrender.com/create-checkout-session", 
       { 
         method: "POST", 
         headers: headers, 
