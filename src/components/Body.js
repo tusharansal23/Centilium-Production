@@ -33,11 +33,13 @@ import '../css/carousel.css';
 
 
 import OwlCarousel from 'react-owl-carousel';
+import HomepageMap from './HomepageMap';
 
 
 
 const BodyContent = () => {
   
+    const address = "301, Robert Parkinson drive, Brampton";
   return (
           <div className="hero_area">
               {/*  slider section  */}
@@ -65,13 +67,13 @@ const BodyContent = () => {
 
               {/* <!-- contact section --> */}
                   
-                  <HomepageContact />
+                  {/* <HomepageContact /> */}
               
               {/* <!-- end contact section --> */}
 
               {/* <!-- client section --> */}
 
-                  <HomepageReview />
+                  <HomepageMap address={address} />
               {/* <!-- end client section --> */}
 
 

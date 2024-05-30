@@ -6,8 +6,8 @@ import '../css/templatemo.css';
 function HomepageFunfacts() {
     return(
 
-        <div className="fun-facts">
-            <div className="container">
+        <div className="container">
+            <div className="fun-facts">
                 <div className="row">
 
                     {/* 4:3 aspect ratio  */}

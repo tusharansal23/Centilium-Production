@@ -12,6 +12,7 @@ import HomepageAbout from "./components/HomepageAbout";
 import HomepageFunfacts from "./components/HomepageFunfacts";
 import HomepageContact from "./components/HomepageContact";
 import HomepageReview from "./components/HomepageReview";
+import HomepageMap from "./components/HomepageMap";
 import HomepageInfo from "./components/HomepageInfo";
 import Student from "./components/Student";
 import Business from "./components/Business";
@@ -63,6 +64,7 @@ function App() {
           <Route path="SetUpMeeting" element={<SetUpMeeting setShowButton={setShowButton}/>}/>
           
           <Route path="HomepageReview" element={<HomepageReview/>}/>
+          <Route path="HomepageMap" element={<HomepageMap/>}/>
           <Route path="success" element={<Success />} />
           <Route path="cancel" element={<Cancel />} />
         </Route>
