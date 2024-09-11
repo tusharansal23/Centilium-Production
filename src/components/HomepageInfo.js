@@ -68,13 +68,13 @@ function HomepageInfo(){
                                     <i className="fa fa-map-marker" aria-hidden="true">    
                                     </i>
                                     <span>
-                                        301, Robert Parkinson drive, Brampton ON L7A4W9
+                                        Brampton ON
                                     </span>
                                 </a>
                                 <a href="" className="">
                                     <i className="fa fa-phone" aria-hidden="true"></i>
                                     <span>
-                                        Call Us: +1 647-324-8308
+                                        Call Us: 519-841-0043
                                     </span>
                                 </a>
                                 <a href="" className="">
