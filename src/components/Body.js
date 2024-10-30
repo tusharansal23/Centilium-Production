@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import jQuery from 'jquery';
-import '../css/style.css';
-import '../css/bootstrap.css';
-import '../css/responsive.css';
+// import jQuery from 'jquery';
+// import '../css/style.css';
+// import '../css/bootstrap.css';
+// import '../css/responsive.css';
 //import '../css/font-awesome.min.css';
-import '../css/templatemo.css';
-import '../css/owl.css';
-import '../css/carousel.css';
+// import '../css/templatemo.css';
+// import '../css/owl.css';
+// import '../css/carousel.css';
 import ControlledCarousel from './HomepageCarousel';
 
 import s1 from '../images/s1.png';
@@ -22,29 +22,33 @@ import HomepageContact from './HomepageContact';
 import HomepageReview from './HomepageReview';
 import HomepageInfo from './HomepageInfo';
 
-import '../css/bootstrap.css';
+// import '../css/bootstrap.css';
+// import '../css/style.css';
+// import '../css/responsive.css';
+// import '../css/owl.css';
+// import '../css/templatemo.css';
+// import '../css/carousel.css';
+import '../css/bootstrap.min.css';
 import '../css/style.css';
-import '../css/responsive.css';
-import '../css/owl.css';
-import '../css/templatemo.css';
-import '../css/carousel.css';
 
 
 
 
 import OwlCarousel from 'react-owl-carousel';
 import HomepageMap from './HomepageMap';
+import Header from './Header';
 
 
 
 const BodyContent = () => {
   
-    const address = "301, Robert Parkinson drive, Brampton";
+    const address = "Robert Parkinson drive, Brampton";
   return (
-          <div className="hero_area">
+          <div className="body">
               {/*  slider section  */}
-                  <ControlledCarousel /> {/* Use the ControlledCarousel component here */}
+                  {/* <ControlledCarousel /> */}
    
+                <Header/>
     
 
               { /* service section */ }
@@ -61,19 +65,21 @@ const BodyContent = () => {
 
               {/*  fun facts section  */}
 
-                  <HomepageFunfacts />
+                  {/* <HomepageFunfacts /> */}
 
               {/*  fun facts section */}
 
               {/* <!-- contact section --> */}
                   
-                  {/* <HomepageContact /> */}
+                  <HomepageContact />
+
+                  <HomepageReview />
               
               {/* <!-- end contact section --> */}
 
               {/* <!-- client section --> */}
 
-                  <HomepageMap address={address} />
+                  {/* <HomepageMap address={address} /> */}
               {/* <!-- end client section --> */}
 
 

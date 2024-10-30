@@ -1,5 +1,5 @@
 import React,{ useState } from "react";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet, useLocation } from "react-router-dom";
 import StripePayment from "./components/StripePayment";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
@@ -12,37 +12,52 @@ import HomepageAbout from "./components/HomepageAbout";
 import HomepageFunfacts from "./components/HomepageFunfacts";
 import HomepageContact from "./components/HomepageContact";
 import HomepageReview from "./components/HomepageReview";
-import HomepageMap from "./components/HomepageMap";
 import HomepageInfo from "./components/HomepageInfo";
-import Student from "./components/Student";
-import Business from "./components/Business";
-import Tourist from "./components/Tourist";
-import Work from "./components/Work";
+import HomepageMap from "./components/HomepageMap";
+import StudyPermit from "./components/StudyPermit";
+import PNP from "./components/PNP";
+import VisitorVisa from "./components/VisitorVisa";
+import WorkAndTravelPermit from "./components/WorkAndTravelPermit";
 import About from "./components/About";
-import Service from "./components/Service";
+import LMIA from "./components/LMIA";
+import FamilySponsorship from "./components/FamilySponsorship";
+import ExpressEntry from "./components/ExpressEntry";
 import Contact from "./components/Contact";
 import SetUpMeeting from "./components/SetUpMeeting";
 import Chatbot from "./components/Chatbot";
+import Admin from "./components/Admin";
+import Dashboard from "./components/Dashboard";
+import BlogEditor from "./components/BlogEditor";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import Navbar from "./components/Navbar";
+import Main from "./js/main";
+
+
 
 function App() {
   const [showButton, setShowButton] = useState(true);
+  
   return (
     <BrowserRouter>
+      <Main/>
+      <Navbar/>
       <Routes>
         {/* Use a top-level route for the layout */}
-        <Route
+         <Route
           path="/"
-          element={
-            <>
-              { <Header showButton={showButton}/>}
-              {/* Use Outlet to render child routes */}
-              <Outlet />
-              <Chatbot/>
-              <HomepageInfo/>
-              <Footer />
-            </>
-          }
-        >
+          element=
+          {<Layout showButton={showButton} />}
+          
+            // <>
+            //   {!isAdminPage && <Header showButton={showButton}/>}
+            //   {/* Use Outlet to render child routes */}
+            //   <Outlet />
+            //   {!isAdminPage && <Chatbot/>}
+            //   {!isAdminPage && <HomepageInfo/>}
+            //   {!isAdminPage && <Footer />}
+            // </>
+          
+        > 
           {/* Use nested routes for the Body component */}
           <Route index element={<Body />} />
           <Route path="stripePayment" element={<StripePayment setShowButton={setShowButton}/>} />
@@ -52,13 +67,18 @@ function App() {
           <Route path="HomepageFunfacts" element={<HomepageFunfacts />}/>
           <Route path="HomepageContact" element={<HomepageContact/>}/>
           <Route path="HomepageInfo" element={<HomepageInfo/>}/>
-          <Route path="Student" element={<Student/>}/>
-          <Route path="Business" element={<Business/>}/>
-          <Route path="Tourist" element={<Tourist/>}/>
-          <Route path="Work" element={<Work/>}/>
+          <Route path="StudyPermit" element={<StudyPermit/>}/>
+          <Route path="PNP" element={<PNP/>}/>
+          <Route path="VisitorVisa" element={<VisitorVisa/>}/>
+          <Route path="FamilySponsorship" element={<FamilySponsorship/>}/>
+          <Route path="ExpressEntry" element={<ExpressEntry/>}/>
+          <Route path="WorkAndTravelPermit" element={<WorkAndTravelPermit/>}/>
           <Route path="About" element={<About/>}/>
-          <Route path="Service" element={<Service/>}/>
+          <Route path="LMIA" element={<LMIA/>}/>
+          <Route path="BlogEditor" element={<BlogEditor/>}/>
           <Route path="Contact" element={<Contact/>}/>
+          <Route path="Admin" element={<Admin/>}/>
+          <Route path="Dashboard" element={<Dashboard/>}/>
           {/* <Route path="Chatbot" element={<Chatbot/>}/> */}
           
           <Route path="SetUpMeeting" element={<SetUpMeeting setShowButton={setShowButton}/>}/>
@@ -70,6 +90,22 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+  );
+}
+// Custom Route component for handling layout
+function Layout({ showButton }) {
+  const location = useLocation();
+  const isAdminPage = location.pathname.includes("/Admin");
+  const isDashboard = location.pathname.includes("/Dashboard");
+
+  return (
+    <>
+      {/* {!isAdminPage && !isDashboard && <Header showButton={showButton} />} */}
+      <Outlet />
+      {!isAdminPage && !isDashboard && <Chatbot />}
+      {!isAdminPage && !isDashboard && <HomepageInfo/>}
+      {!isAdminPage && !isDashboard && <Footer />}
+    </>
   );
 }
 

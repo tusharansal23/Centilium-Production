@@ -1,56 +1,446 @@
-/* App.css */
-.service_container {
+/* Back link styles */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .back-link-text {
+    color: #000; /* Default text color */
+  }
+  
+  .back-link-text:hover {
+    color: #007BFF; /* Change text color on hover (Primary) */
+  }
+  
+  /* Change both icon and text on hover */
+  .back-link:hover .back-arrow path,
+  .back-link:hover .back-link-text {
+    fill: #007BFF; /* Change icon color on hover */
+    color: #007BFF; /* Change text color on hover */
+  }
+  
+  /* Service container */
+  .service-content {
     display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #f8f9fa;
   }
   
-  .sidebar {
-    border-left: outset;
+  @media (min-width: 1024px) {
+    .service-content {
+      flex-direction: row;
+    }
+  
+    .text-content {
+      width: 50%;
+      padding: 15px;
+    }
+  
+    .image-content {
+      width: 50%;
+    }
+  }
+  
+  /* 360-degree rotation on hover */
+  .image-content img {
+    transition: transform 1s ease-in-out;
+  }
+  
+  .image-content:hover img {
+    transform: rotate(360deg);
+  }
+  .lmia-image {
+    width: 512px;
+    height: 383px;
+  }  
+  .heading-color {
+    color: #0E2E50;
+  }
+
+/* Container for left and right divs */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Left side with 4 divs */
+  .left-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 divs per row */
+    gap: 20px;
+    width: 100%;
+  }
+  .left-side-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 48%;
+    background: #f8f9fa;
+  }
+  
+  /* Right side with 3 divs */
+  .right-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* padding: 20px; */
+    gap: 40px;
+    width: 48%;
+  }
+  
+  /* Common styles for items in both left and right divs */
+  .left-item {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+    border: 1px solid #fff;
+    border-radius: 3%;
+    background-color: #fff;
+    transition: transform 1s ease-in-out;
+    /* Adding 3D effect */
+    transform-style: preserve-3d;
+  }
+  .left-item:hover {
+    transform: rotateY(360deg);
+  }
+  .right-item {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 3%;
+    background: #f8f9fa;
+  }
+  .heading-left-item {
+    width: 100%;
+  }
+  .left-item-button-div {
+    width: 100%;
+    height: 60px;
+    margin-top: 40px;
+  }
+  .left-item-button {
+    border:none;
+    background: #f1b9be;
     border-radius: 20px;
-    background-color: #071a52;
+    width: 100%;
+    height: 40px;
+  }
+  /* Circular div for the image */
+  .image-wrapper {
+    border: 2px solid #f1b9be;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-image-wrapper {
+    border: 2px solid #f1b9be;
+    width: 70%;
+    height: 65px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+    /* Adding 3D effect */
+    transform-style: preserve-3d;
+  }
+  .right-image-wrapper:hover {
+    transform: rotateY(360deg);
+  }
+  .icon-style {
+    color: chartreuse;
+    font-size: 30px;
+  }
+  .ri-wrapper {
+    width: 20%;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* To make sure the image fits inside the circle */
+  }
+  
+  .line-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Thicker, shorter line */
+  .thick-line {
+    border-radius: 10px;
+    width: 60px;
+    height: 8px;
+    background-color: lightgrey;
+    margin-bottom: 5px;
+  }
+  
+  /* Thinner, longer line */
+  .thin-line {
+    border-radius: 10px;
+    width: 90px;
+    height: 7px;
+    background-color: lightgrey;
+  }
+  .text-wrapper {
+    width: 80%;
+    /* padding-left: 10px; */
+  }
+
+  .apply-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .apply-left-div {
+    width: 50%; /* Adjust as needed */
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .apply-right-div {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .apply-image-wrapper {
+    position: relative;
+  }
+  
+  .apply-large-image {
+    width: 400px; /* Set your desired size */
+    height: auto;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  .apply-small-image {
+    width: 200px; /* Smaller image size */
+    height: auto;
+    position: absolute;
+    top: 50%;  /* Adjust to overlap by half */
+    left: 100%;
+    transform: translate(-50%, -50%); /* Center the smaller image over the larger one */
+    border: 2px solid #fff; /* Optional: Add a white border to the smaller image */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow to make it stand out */
+  }
+  .ml-30{
+    margin-left: 30px;
+  }
+
+  .zoom-image-container {
+    position: relative;
+    width: 500px; /* Set your desired width */
+    height: 500px; /* Set your desired height */
+    overflow: hidden; /* Ensure the image stays inside the container during zoom */
+  }
+  
+  .zoom-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the entire container */
+    animation: zoom-in-out 2s ease-in-out infinite; /* 2s animation loop */
+  }
+  
+  /* Zoom-In and Zoom-Out animation */
+  @keyframes zoom-in-out {
+    0% {
+      transform: scale(1); /* Original size */
+    }
+    50% {
+      transform: scale(1.2); /* Zoom in to 120% */
+    }
+    100% {
+      transform: scale(1); /* Return to original size */
+    }
+  }
+
+  /* Container to hold both images */
+.benefits-image-container {
+    position: relative;
+    width: 500px; /* Adjust as needed */
+    height: 500px; /* Adjust as needed */
+    overflow: hidden;
+  }
+  
+  /* Larger image styling */
+  .benefits-large-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Smaller image that moves along the boundary */
+  .benefits-small-image {
+    position: absolute;
+    width: 100px; /* Adjust size of the smaller image */
+    height: 100px;
+    border-radius: 50%; /* Makes the smaller image circular */
+    object-fit: cover;
+    animation: move-along-border 10s linear infinite, rotate 2s linear infinite; /* Move and rotate */
+  }
+  
+  /* Animation for moving around the larger image's boundaries */
+  @keyframes move-along-border {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    25% {
+      top: 0;
+      left: calc(100% - 100px); /* Adjust based on smaller image size */
+    }
+    50% {
+      top: calc(100% - 100px); /* Move to the bottom-right */
+      left: calc(100% - 100px);
+    }
+    75% {
+      top: calc(100% - 100px); /* Move to bottom-left */
+      left: 0;
+    }
+    100% {
+      top: 0;
+      left: 0; /* Complete the loop back to the top-left */
+    }
+  }
+  
+  /* Animation for rotating the smaller image clockwise */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Container to hold the cards */
+
+  .qa-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+.qa-card-container {
+    width: 97%;
+    display: flex;
+    justify-content: space-between; /* Ensures equal spacing between cards */
+    gap: 20px; /* Adds space between the cards */
     padding: 20px;
   }
   
-  .menu-btn {
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 150px;
-    text-align: center;
+  /* Styling for each card */
+  .qa-card {
+    flex: 1; /* Each card takes equal width */
+    padding: 20px;
     border: none;
-    background-color: #eaeaea;
-    cursor: pointer;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
-  
-  .main-content {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .visa-component {
+  .mb-20 {
     margin-bottom: 20px;
   }
-  .pt-12{
-    padding-top: 12%;
-  }
-  .menu {
-    color:#fff;
-    list-style: none;
-    padding: 0;
+  .qa-card:hover {
+    /* transform: translateY(-10px); */
+    border: none;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   
-  .menu-item {
-    cursor: pointer;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
+  /* Optional: Ensure that cards don't shrink on smaller screens */
+  @media (max-width: 768px) {
+    .qa-card-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  .expert-content-wrapper {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    /* text-align: center; */
+    align-items: center;
+    padding: 10%;
+    background: #00B98E;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .expert-left-div {
+    align-items: center;
+    width: 40%;
+  }
+  .expert-right-div {
+    color: #333;
+    align-items: center;
+    width: 40%;
+  }
+  .mb-in-perc-7 {
+    margin-bottom: 7%;
   }
   
-  .menu-item:hover {
-    color: red;
-    /* background-color: #f0f0f0; */
-  }
-  
-  .menu-item.active {
-    color:#8eec69;
-    /* background-color: #e0e0e0; */
-  }
+  .eligibility-large-image,
+.eligibility-small-image {
+  width: 100%;
+  position: absolute; /* Overlay images */
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.eligibility-large-image.hidden,
+.eligibility-small-image.hidden {
+  opacity: 0; /* Hide with opacity */
+}
+
+.eligibility-large-image.visible,
+.eligibility-small-image.visible {
+  opacity: 1; /* Show */
+}
+
   

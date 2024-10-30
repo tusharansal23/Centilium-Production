@@ -1,7 +1,7 @@
-import '../css/bootstrap.css';
+// import '../css/bootstrap.css';
 import '../css/style.css';
-import '../css/responsive.css';
-import '../css/templatemo.css';
+// import '../css/responsive.css';
+// import '../css/templatemo.css';
 
 function HomepageFunfacts() {
     return(

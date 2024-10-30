@@ -1,49 +1,32 @@
+import item1 from '../images/call-to-action.jpg';
+import HomepageMap from './HomepageMap';
 
-function HomepageContact() {
-    return(
 
-        <section className="contact_section layout_padding">
-            <div className="contact_bg_box">
-                <img src="images/contact-bg.jpg" alt=""/>
-            </div>
+const HomepageContact = () => {
+
+    return (
+        <div className="container-xxl py-5">
             <div className="container">
-                <div className="heading_container heading_center">
-                    <h2>
-                        Contact Us
-                    </h2>
-                </div>
-                <div className="row">
-                    <div className="col-md-9 mx-auto">
-                        <div className="form_container">
-                            <form>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                        <input type="text" className="form-control" placeholder="First Name" />
+                <div className="bg-light rounded p-3">
+                    <div className="contact-container bg-white rounded p-4" /*style="border: 1px dashed rgba(0, 185, 142, .3)"*/>
+                        <div className="row g-5 align-items-center">
+                            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                <img className="img-fluid rounded w-100" src={item1} alt=""/>
+                            </div>
+                            <div className="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div className="mb-4">
+                                <h1 className="mb-3">Get Started Today</h1>
+                                    <p>Reay to make Canada your new home? Contact us to schedule a consultation and discover
+                                        how can we help you achieve your immigration goals.</p>
                                     </div>
-                                    <div className="form-group col-md-6">
-                                        <input type="text" className="form-control" placeholder="Last Name" />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                        <input type="email" className="form-control" placeholder="Email" />
-                                    </div>
-                                    <div className="form-group col-md-6">
-                                        <input type="text" className="form-control" placeholder="Phone Number" />
-                                    </div>
-                                </div>
-                                <div className="form-group ">
-                                    <input type="text" className="message-box" placeholder="Message" />
-                                </div>
-                                <div className="btn-box">
-                                    <a href="mailto:team@centiliumimmigration.com, meghnaansal94@gmail.com">Submit</a>
-                                </div>
-                            </form>
+                                <a href="" className="btn btn-primary py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>Make A Call</a>
+                                <a href="" className="btn btn-dark py-3 px-4"><i class="fa fa-calendar-alt me-2"></i>Get Appoinment</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
-}
+};
 export default HomepageContact;

@@ -1,0 +1,14 @@
+.meeting-outer-box{
+    padding-top: 18%;
+}
+.meeting-inner-box{
+    width: 100%;
+}
+.justify-content-space-around{
+    justify-content: space-around;
+}
+
+/* .custom_nav-container .navbar-nav .nav-item .nav-link{
+    color: #040e40;
+}
+*/

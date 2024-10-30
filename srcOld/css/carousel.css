@@ -1,0 +1,229 @@
+.h-400{
+    height : 500px !important;
+}
+/* carousel.css */
+
+/* Style for the overlapped image and caption */
+.carousel-item {
+    position: relative;
+  }
+  
+  /* Style for the image in the carousel */
+  .carousel-item img {
+     width: 100%;
+    
+    border-radius: 10px; /* Add border-radius for a rounded corner effect 
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Add shadow effect  */
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+  }
+  
+  /* Style for the caption in the carousel */
+  .carousel-caption {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 500px ;
+    padding: 20px; /* Adjust padding as needed */
+    background: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background */
+    border-bottom-left-radius: 10px; /* Match the border-radius of the image */
+    border-bottom-right-radius: 10px; /* Match the border-radius of the image */
+    color: #fff; /* Set the text color */
+  }
+
+  /* Style for the detail box at the bottom */
+.carousel-detail-box {
+  margin-top: 28%;
+  left: 0;
+  width: 100%;
+  padding: 20px; /* Adjust padding as needed */
+  background: rgba(0, 0, 0, 0.1); /* Adjust the alpha value as needed */
+;
+
+  ; /* Add a semi-transparent background */
+  border-bottom-left-radius: 10px; /* Match the border-radisus of the image */
+  border-bottom-right-radius: 10px; /* Match the border-radius of the image */
+  color: #fff; /* Set the text color */
+}
+
+.carousel-detail-box .btn-box .btn-1 {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 10px 35px;
+  background-color: #ffffff;
+  color: #000000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.carousel-detail-box .btn-box .btn-1:hover {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.carousel-detail-box .btn-box .btn-2 {
+  display: inline-block;
+  padding: 10px 35px;
+  margin-left: 20px;
+  background-color: #8eec69;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.carousel-detail-box .btn-box .btn-2:hover {
+  background-color: transparent;
+  border-color: #8eec69;
+  color: #8eec69;
+}
+.carousel-detail-box h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.carousel-indicators button {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  text-align: center;
+  background-color: #8eec69;
+  opacity: 1;
+  border: none;
+  margin: 0 4px;
+}
+
+
+.carousel-indicators button {
+  display:none;
+}
+
+.carousel-caption {
+  position: relative;
+  
+  z-index: 10;
+  color: #fff;
+  text-align: center;
+}
+
+.review-box {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 3%;
+  position: relative;
+}
+.review-margin-4{
+  margin-top: 4%;
+}
+.review-detail-box {
+  /* margin-top: 3%; */
+  
+  background-color: #071a52;
+  color: #ffffff;
+  border: 1px solid #dddddd;
+  padding: 60px 25px 25px 25px;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+.review-detail-box h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+.review-detail-box p {
+  margin-top: 25px;
+}
+.review-detail-box h5 {
+  font-weight: 600;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 2;
+}
+.review-detail-box h6 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+.review-detail-box p {
+  margin: 0;
+  font-size: 15px;
+  position: relative;
+  z-index: 2;
+}
+.review-img-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.review-img-box img {
+  width: 100%;
+}
+.review-img-box {
+  position: relative;
+  width: 105px;
+  margin-bottom: 10%;
+  margin-left: 25px;
+  z-index: 3;
+}
+.review-img-box img {
+  width: 100%;
+  border-radius: 100%;
+  border: 5px solid #ffffff;
+}
+.w-100{
+  width: 100%;
+}
+.review-detail-box::before {
+  content: "\f10e";
+  font-family: fontAwesome;
+  position: absolute;
+  right: 10px;
+  bottom: -10px;
+  font-size: 8rem;
+  z-index: 1;
+  opacity: .1;
+}
+.heading_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.heading_container h2 {
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-top: 6%;
+}
+.heading_container h2::before {
+  content: "";
+  width: 60px;
+  height: 7px;
+  background-color: #8eec69;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.client_section .client_container {
+  margin-top: 45px;
+}

@@ -1,119 +1,82 @@
-import { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import React from 'react';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import '../css/carousel.css';
-import clientImage1 from "../images/client-1.jpg";
-import clientImage2 from "../images/client-2.jpg";
 
-function HomepageReview() {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
+const HomepageReview = () => {
+  const options = {
+    loop: true,
+    margin: 10,
+    nav: true,
+    dots:false,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    navText: [
+        '<i class="bi bi-arrow-left"></i>', // Left arrow
+        '<i class="bi bi-arrow-right"></i>' // Right arrow
+      ],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      }
+    },
   };
 
   return (
-    <div className="container">
-        <div className="heading_container">
-            <h2>
-                What Says Our Client
-            </h2>
+    <div className="container-xxl py-5">
+      <div className="container">
+        <div
+          className="text-center testimonial-container mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+        >
+          <h1 className="mb-3">News & Updates</h1>
+          <p>
+            Stay up-to-date with our latest news and updates. From exciting
+            developments to upcoming events, our section keeps you informed and
+            inspired. Explore our updates today!
+          </p>
         </div>
-        <div className="client_container">
-        <Carousel activeIndex={index} onSelect={handleSelect} 
-                swipeable={true}
-                draggable={true}
-                autoPlay={true}
-                showDots={true}
-                ssr={true}
-                renderDotsOutside={true}
-                controls={false}>
+{/*  */}
+        <OwlCarousel className="owl-theme testimonial-carousel" {...options}>
+            
+                <div className="testimonial-item bg-light rounded p-3">
+                    <div className="bg-white border rounded p-4">
+                        <p>
+                            I am very happy with the service. I was able to get my permanent residency with so much ease.
+                        </p>
+                        <div className="d-flex align-items-center">
+                            <div className="ps-3">
+                                <h6 className="fw-bold mb-1">Kavita S</h6>
+                                <small>India</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <Carousel.Item>
-                <div className = 'd-flex w-100'>
-                    <div className="review-box">
-                        <div className="review-img-box">
-                            <img src={clientImage1} alt="" className="img-1"/>
-                        </div>
-                        <div className="review-detail-box">
-                            <h5>
-                                Thilina Mathews
-                            </h5>
-                            <h6>
-                                Srilanka
-                            </h6>
-                            <p>
-                                I highly recommend Centilium Immigration for their exceptional expertise, personalized approach, 
-                                and efficient services in providing Canada Business Visa consultations. 
-                                Their professionalism and attention to detail made the process smooth and reassuring.  
-                            </p>
-                        </div>
-                    </div>
-                    <div className="review-box review-margin-4">
-                        <div className="review-img-box">
-                            <img src={clientImage2} alt="" class="img-1"/>
-                        </div>
-                        <div className="review-detail-box">
-                            <h5>
-                                Zaire Smith
-                            </h5>
-                            <h6>
-                                Durban
-                            </h6>
-                            <p>
-                                I recently utilized Centilium Immigration's student visa consultation service, 
-                                and I am extremely satisfied with the experience. Their knowledgeable consultants provided personalized guidance, 
-                                addressing all my concerns, and their efficient support made the entire visa application process smooth and hassle-free. 
-                                I highly recommend Centilium Immigration for anyone seeking professional assistance with their student visa journey.  
-                            </p>
+                <div className="testimonial-item bg-light rounded p-3">
+                    <div className="bg-white border rounded p-4">
+                        <p>
+                            I was able to re-unite with my parents. Thank you centilium Immigration. AND MANY MORE
+                        </p>
+                        <div className="d-flex align-items-center">
+                            <div className="ps-3">
+                                <h6 className="fw-bold mb-1">BHANU K</h6>
+                                <small>India</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </Carousel.Item>
-            <Carousel.Item>
-                <div className='d-flex w-100'>
-                    <div className="review-box">
-                        <div className="review-img-box">
-                            <img src={clientImage1} alt="" className="img-1"/>
-                        </div>
-                        <div className="review-detail-box">
-                            <h5>
-                                Mark Evans
-                            </h5>
-                            <h6>
-                                Magna
-                            </h6>
-                            <p>
-                                I had an excellent experience with Centilium Immigration's tourist visa consultation service. 
-                                The consultants were knowledgeable, efficient, and provided personalized guidance, making the visa application process hassle-free. 
-                                I highly recommend Centilium Immigration for anyone seeking professional assistance with their tourist visa requirements.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="review-box review-margin-4">
-                        <div className="review-img-box">
-                            <img src={clientImage2} alt="" className="img-1"/>
-                        </div>
-                        <div className="review-detail-box">
-                            <h5>
-                                Anthony White
-                            </h5>
-                            <h6>
-                                Magna
-                            </h6>
-                            <p>
-                                Centilium Immigration's work visa consultation service was exceptional! 
-                                Their knowledgeable consultants provided personalized guidance, making the application process stress-free. 
-                                I highly recommend them for anyone seeking professional assistance with their work visa.  
-                            </p>
-                        </div>
-                    </div>
-                </div>
-          </Carousel.Item>
-      </Carousel>
+
+        </OwlCarousel>
       </div>
     </div>
   );
-}
+};
 
 export default HomepageReview;

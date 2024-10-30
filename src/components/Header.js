@@ -1,97 +1,83 @@
 import React from 'react';
-import '../css/templatemo.css';
-import '../css/style.css';
-import '../css/responsive.css';
-import '../css/owl.css';
-import '../css/bootstrap.css';
-import '../css/logo.css';
-import logo from '../images/logo.png';
-//import About from './About';
-import { useNavigate, useLocation } from 'react-router-dom';
+import Slider from 'react-slick';
+import ExampleCarouselImage1 from '../images/hero-bg.jpg';
+import ExampleCarouselImage2 from '../images/about2.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import { Link } from 'react-router-dom';
-// Use CSS styles with media queries
+const Header = () => {
+  // Slick settings for the carousel
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    prevArrow: <PrevArrow />, // Custom prev arrow component
+    nextArrow: <NextArrow />, // Custom next arrow component
+  };
 
-const Header = ({showButton}) => {
-
-  const navigate = useNavigate();
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
-  console.log("ishomepage = ",isHomePage);
   return (
-    <header className="header_section">
-      <div className="header_top">
-        <div className="container-fluid">
-          <div className="contact_link-container">
-            <a href="" className="contact_link1">
-              <i className="fa fa-map-marker" aria-hidden="true"></i>
-              <span>
-                Brampton ON
-              </span>
-            </a>
-            <a href="" className="contact_link2">
-              <i className="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Call Us: 519-841-0043
-              </span>
-            </a>
-            <a href="" className="contact_link3">
-              <i className="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                team@centiliumimmigration.com
-              </span>
-            </a>
+    <div className="container-xxl bg-white p-0 mtinperc-10">
+      <div className="container-fluid header bg-white p-0">
+        <div className="row g-0 align-items-center flex-column-reverse flex-md-row">
+          <div className="col-md-6 p-5 mt-lg-5">
+            <h5 className="display-5 animated fadeIn mb-4">Your Pathway To Canada <span className="text-primary">Starts Here</span></h5>
+            <p className="animated fadeIn mb-4 pb-2">At Centilium Immigration, we are dedicated to helping you navigate the complexities of Canadian Immigration with ease & confidence.
+              Whether you're looking to start a new life in Canada, reunite with family, or exploring exciting business opportunities, our expert team is here to guide you every step of the way.</p>
+            <a href="" className="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
+          </div>
+          <div className="col-md-6 animated fadeIn">
+            <Slider {...settings}>
+              <div>
+                <img className="img-fluid carousel-image" src={ExampleCarouselImage1} alt=""/>
+              </div>
+              <div>
+                <img className="img-fluid carousel-image" src={ExampleCarouselImage2} alt=""/>
+              </div>
+              <div>
+                <img className="img-fluid carousel-image" src={ExampleCarouselImage1} alt=""/>
+              </div>
+              <div>
+                <img className="img-fluid carousel-image" src={ExampleCarouselImage2} alt=""/>
+              </div>
+            </Slider>
           </div>
         </div>
       </div>
-      <div className="header_bottom">
-        <div className="container-fluid">
-          <nav className="navbar navbar-expand-lg custom_nav-container">
-            <a className="navbar-brand" href="index.html">
-              <img src= {logo} className='logo' alt="Logo"/>
-            </a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className=""></span>
-            </button>
+    </div>
+  );
+};
 
-            <div className="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-              <ul className="navbar-nav  ">
-                <li className="nav-item active">
-                  <button className={`${isHomePage ? 'homepage-link' : 'nav-link'}`} onClick={() => navigate('/')} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-                      Home
-                  </button>
-                </li>
-                <li className="nav-item">
-                <button className={`${isHomePage ? 'homepage-link' : 'nav-link'}`} onClick={() => navigate('/Service')} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-                    Service
-                  </button>
-                </li>
-                <li className="nav-item">
-                <button className={`${isHomePage ? 'homepage-link' : 'nav-link'}`} onClick={() => navigate('/About')} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-                    About
-                  </button>
-                </li>  
-                <li className="nav-item">
-                <button className={`${isHomePage ? 'homepage-link' : 'nav-link'}`} onClick={() => navigate('/Contact')} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-                    Contact Us
-                  </button>
-                </li>
-                {/* <li class="nav-item">
-                  <Link class="nav-link" to="./SetUpMeeting"> Book Meeting </Link>
-                </li> */}
-              </ul>
-            </div>
-            {showButton && (
-                <div className="navigation-btn-box">
-                    <Link to="./SetUpMeeting" className="btn-2"> 
-                        Book Meeting 
-                    </Link>
-                </div>
-            )}
-          </nav>
-        </div>
-      </div>
-    </header>
+// Custom Prev Arrow Component
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", left: "10px", zIndex: 1 }}
+      onClick={onClick}
+    >
+      <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+    </div>
+  );
+};
+
+// Custom Next Arrow Component
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", right: "10px", zIndex: 1 }}
+      onClick={onClick}
+    >
+      <FontAwesomeIcon icon={faChevronRight} size="2x" />
+    </div>
   );
 };
 

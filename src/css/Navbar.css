@@ -1,0 +1,85 @@
+/* Box styling */
+.dropdown-menu {
+    background: transparent;
+    border: none;
+}
+.dropdown-box {
+    text-align: center;
+    border-top: 4mm ridge rgba(51, 199, 165, .6);
+    box-shadow: black;
+    background-color: #fff;
+    padding: 10px;
+    margin-left: -60px;
+    border-radius: 5px;
+    opacity: 0; /* Start hidden until animation plays */
+    transform: translateX(0) skew(0); /* Reset the transform */
+    transition: all 0.5s ease; /* Smooth transition for the animation */
+}
+.dropdown-box:hover {
+    border: 2px solid #ccc;
+    background-color: #33c7a5;
+}
+   
+
+.nav-item-left {
+    transform: skew(30deg); /* Cancel out the skew for the content inside */
+    position: relative;
+    z-index: 1;
+    font-size: 0.9rem;
+    font-weight: 100;
+}
+.nav-item-left:hover {
+    color: #fff;
+    background-color: transparent !important;
+}
+.nav-item-right:hover {
+    color: #fff ;
+    background-color: transparent !important;
+}
+.nav-item-right {
+    transform: skew(-30deg); /* Cancel out the skew for the content inside */
+    position: relative;
+    z-index: 1;
+    font-size: 0.9rem;
+    font-weight: 100;
+}
+.submenu{
+    transform: skew(30deg) !important;
+    right: 110%;
+    top: -10px !important;
+}
+
+/* Animation for items sliding from the left with skew */
+@keyframes slideInLeftSkewed {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) skew(-30deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) skew(-30deg);
+    }
+}
+
+/* Animation for items sliding from the right with skew */
+@keyframes slideInRightSkewed {
+    0% {
+        opacity: 0;
+        transform: translateX(100%) skew(30deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) skew(30deg);
+    }
+}
+
+/* Apply the left animation with skew */
+.animate-left {
+    animation: slideInLeftSkewed 0.5s ease-in-out forwards;
+}
+
+/* Apply the right animation with skew */
+.animate-right {
+    animation: slideInRightSkewed 0.5s ease-in-out forwards;
+}
+

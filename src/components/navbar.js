@@ -1,69 +1,146 @@
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import { loadStripe } from '@stripe/stripe-js';
+import React, { useState, useEffect } from 'react';
+import logo from '../images/logo.png';
+import { Link, useLocation } from 'react-router-dom';
+import '../css/Navbar.css'; // Import CSS file for animations
 
 const Navbar = () => {
-  const [stripe, setStripe] = useState(null);
+    const [activeLink, setActiveLink] = useState('Home');
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [visibleItems, setVisibleItems] = useState([]);
+    const [subDropdownVisible, setSubDropdownVisible] = useState({});
 
-  useEffect(() => {
-    // Load Stripe.js asynchronously
-    const loadStripeJS = async () => {
-      const stripeObject = await loadStripe('pk_test_51OXiwpSBXSrOXlv5DNNk7oUb5WYJLzApwoj8GSNISvbzpv98CFNpeBKKNuORJcsYbkYHkotJ2OSycxwjntrq3rrH00Jx0KxLCN');
-      setStripe(stripeObject);
+    const items = ['Permanent Residency', 'Work And Travel Permit', 'Study Permit', 'Visitor Visa', 'StartUp Visa', 'Family Sponsorship'];
+
+    const subItems = {
+        'Permanent Residency': ['Express Entry', 'PNP'],
+        'Study Permits': ['Student Visa', 'Post-Graduate Work Permit'],
     };
 
-    loadStripeJS();
-  }, []);
+    const location = useLocation();
+    const isDashboardDummyPage = location.pathname;
 
-  const handlePayment = async () => {
-    // Example client-side code
-const items = [
-  { "id": "item1", "quantity": 2, "price": 500 }, // Item 1 costs $5.00 and quantity is 2
-  { "id": "item2", "quantity": 1, "price": 300 }, // Item 2 costs $3.00 and quantity is 1
-];
-    if (stripe) {
-      // Call your server to create a PaymentIntent
-      console.log("items = ",items);
-      const response = await fetch('https://centilium-backend-production.onrender.com/create-payment-intent', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ items }),
-      });
+    const handleLinkClick = (linkName) => {
+        setActiveLink(linkName);
+        if (linkName === 'Service') {
+            setShowDropdown(!showDropdown);
+        } else {
+            setShowDropdown(false);
+            setVisibleItems([]); // Reset visible items when another link is clicked
+        }
+    };
 
-      const { clientSecret } = await response.json();
+    // Sequential appearance of dropdown items
+    useEffect(() => {
+        if (showDropdown) {
+            let i = 0;
+            const newVisibleItems = [];
+            const interval = setInterval(() => {
+                if (i < items.length) {
+                    newVisibleItems.push(items[i]);
+                    setVisibleItems([...newVisibleItems]); // Make a copy of the array and update
+                    i++;
+                } else {
+                    clearInterval(interval); // Stop when all items are shown
+                }
+            }, 500); // 0.5-second gap between items
+            return () => clearInterval(interval); // Clean up on dismount
+        } else {
+            setVisibleItems([]); // Reset when dropdown is hidden
+        }
+    }, [showDropdown]);
 
-      // Use Stripe.js to confirm the payment
-      const result = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: {
-            // Include card details here
-          number: '4242424242424242',
-          exp_month: 12,
-          exp_year: 2024,
-          cvc: '123',
-          },
-        },
-      });
+    const handleSubDropdown = (itemName, visible) => {
+        setSubDropdownVisible((prev) => ({
+            ...prev,
+            [itemName]: visible,
+        }));
+    };
 
-      if (result.error) {
-        console.error(result.error.message);
-        // Handle payment failure
-      } else {
-        console.log('Payment successful:', result.paymentIntent);
-        // Handle payment success
-      }
+    if (
+        isDashboardDummyPage === '/DashboardDummy' ||
+        isDashboardDummyPage === '/DashboardChapter' ||
+        isDashboardDummyPage === '/DashboardEvent' ||
+        isDashboardDummyPage === '/DashboardGallery' ||
+        isDashboardDummyPage === '/ChangePassword' ||
+        isDashboardDummyPage === '/AccountSetting'
+    ) {
+        return null;
     }
-  };
 
-  return (
-    <div>
-      <h1>Hello</h1>
-      {/* Your payment form UI and button */}
-      <button onClick={handlePayment}>Pay Now</button>
-    </div>
-  );
+    return (
+        <div className="container-fluid nav-bar bg-transparent">
+            <nav className="navbar navbar-expand-lg navbar-light py-0 px-4 navbar-bg-transparent">
+                <a href="index.html" className="navbar-brand d-flex align-items-center text-center">
+                    <div className="icon p-2 me-2">
+                        <img className="img-fluid navbar-img-container" src={logo} alt="Icon" />
+                    </div>
+                    <h2 className="m-0 text-primary">Centilium</h2>
+                    <h6 className='mtinpx-5'>Immigration</h6>
+                </a>
+                <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarCollapse">
+                    <div className="navbar-nav ms-auto">
+                        <Link to="./" className={`nav-item nav-link ${activeLink === 'Home' ? 'active' : ''}`} onClick={() => handleLinkClick('Home')}>
+                            Home
+                        </Link>
+                        <Link to="./About" className={`nav-item nav-link ${activeLink === 'About' ? 'active' : ''}`} onClick={() => handleLinkClick('About')}>
+                            About
+                        </Link>
+                        <div
+                            className="nav-item dropdown"
+                            onMouseEnter={() => setShowDropdown(true)}
+                            onMouseLeave={() => setShowDropdown(false)}
+                        >
+                            <Link to="#" className={`nav-item nav-link dropdown-toggle ${activeLink === 'Service' ? 'active' : ''}`} onClick={() => handleLinkClick('Service')}>
+                                Service
+                            </Link>
+                            {showDropdown && (
+                                <div className="dropdown-menu show">
+                                    {visibleItems.map((item, index) => (
+                                        <div
+                                            key={index}
+                                            className={`dropdown-box ${index % 2 === 0 ? 'animate-left' : 'animate-right'}`}
+                                            onMouseEnter={() => handleSubDropdown(item, true)}
+                                            onMouseLeave={() => handleSubDropdown(item, false)}
+                                        >
+                                            {item && ( // Only render the link if the item is defined
+                                                <Link to={`./${item.replace(' ', '')}`} className={`dropdown-item ${index % 2 === 0 ? 'nav-item-left' : 'nav-item-right'}`}>
+                                                    {item}
+                                                </Link>
+                                            )}
+
+                                            {/* Submenu for items like 'Permanent Residency' and 'Study Permits' */}
+                                            {subItems[item] && subDropdownVisible[item] && (
+                                                <div className="dropdown-menu submenu show">
+                                                    {subItems[item].map((subItem, subIndex) => (
+                                                        <div key={subIndex} className={`dropdown-box ${subIndex % 2 === 0 ? 'animate-left' : 'animate-right'}`}>
+                                                            {subItem && (
+                                                            <Link to={`./${subItem.replace(' ', '')}`} className={`dropdown-item ${subIndex % 2 === 0 ? 'nav-item-left' : 'nav-item-right'}`}>
+                                                                {subItem}
+                                                            </Link>
+                                                            )}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        <Link to="./Contact" className={`nav-item nav-link ${activeLink === 'Contact' ? 'active' : ''}`} onClick={() => handleLinkClick('Contact')}>
+                            Contact Us
+                        </Link>
+                    </div>
+                    <Link to="./SetUpMeeting" className="btn btn-primary px-3 d-none d-lg-flex">
+                        BOOK MEET
+                    </Link>
+                </div>
+            </nav>
+        </div>
+    );
 };
 
 export default Navbar;

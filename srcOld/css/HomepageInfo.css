@@ -1,0 +1,15 @@
+.info_section .info_links ul {
+    padding: 0;
+  }
+  
+  .info_section .info_links ul li {
+    list-style-type: none;
+  }
+  
+  .info_section .info_links ul li p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+  }
