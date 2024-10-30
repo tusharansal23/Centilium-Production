@@ -3,7 +3,7 @@ import logo from '../images/logo.png';
 import { Link, useLocation } from 'react-router-dom';
 import '../css/Navbar.css'; // Import CSS file for animations
 
-const Navbar = () => {
+const HomeNavbar = () => {
     const [activeLink, setActiveLink] = useState('Home');
     const [showDropdown, setShowDropdown] = useState(false);
     const [visibleItems, setVisibleItems] = useState([]);
@@ -143,4 +143,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default HomeNavbar;

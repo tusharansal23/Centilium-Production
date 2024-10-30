@@ -29,7 +29,7 @@ import Admin from "./components/Admin";
 import Dashboard from "./components/Dashboard";
 import BlogEditor from "./components/BlogEditor";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Navbar from "./components/Navbar";
+import HomeNavbar from "./components/HomeNavbar";
 import Main from "./js/main";
 
 
@@ -40,7 +40,7 @@ function App() {
   return (
     <BrowserRouter>
       <Main/>
-      <Navbar/>
+      <HomeNavbar/>
       <Routes>
         {/* Use a top-level route for the layout */}
          <Route
