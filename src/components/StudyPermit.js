@@ -8,6 +8,11 @@ import s5 from "../images/lab-mrk.jpg";
 import s6 from "../images/temp-work-perm.jpg";
 import s7 from "../images/apply-small.jpg";
 import s8 from "../images/apply-large.jpg";
+import s9 from "../images/sp1.jpg";
+import s10 from "../images/sp2.jpg";
+import s11 from "../images/sp3.jpg";
+import s12 from "../images/sp4.jpg";
+import s13 from "../images/sp8.jpg";
 
 function StudyPermit() {
   const [selectedVisa, setSelectedVisa] = useState('StudyPermit');
@@ -260,7 +265,7 @@ function StudyPermit() {
 
                 <div className="apply-right-div">
                     <div className="zoom-image-container">
-                        <img src={s7} alt="Zooming Image" className="zoom-image" />
+                        <img src={s9} alt="Zooming Image" className="zoom-image" />
                     </div>
                 </div>
 
@@ -345,14 +350,20 @@ function StudyPermit() {
                 </div>
 
                 <div className="apply-right-div">
-                    <div className="benefits-image-container">
-                        <img src={s7} alt="Large" className="benefits-large-image" />
-                        <img src={s8} alt="Small" className="benefits-small-image" />
+                    <div class="arrival-container">
+                        <img src={s10} alt="Image 1" class="sliding-image"/>
+                        <img src={s11} alt="Image 2" class="sliding-image"/>
+                        <img src={s12} alt="Image 3" class="sliding-image"/>
                     </div>
                 </div>
             </div>
 
                 <div className="apply-content-wrapper mb-in-perc-7">
+                    <div className="apply-right-div">
+                        <div class="workStudy-container">
+                            <div class="rotating-image"></div>
+                        </div>
+                    </div>
                     <div className="apply-left-div">
                         {/* <h3>Eligibility Criteria for LMIA</h3>
                         <h5>For Employers :</h5> */}
@@ -384,13 +395,6 @@ function StudyPermit() {
                         </p>
                         
                     </div>
-
-                    <div className="apply-right-div">
-                        <div className="benefits-image-container">
-                            <img src={s7} alt="Large" className="benefits-large-image" />
-                            <img src={s8} alt="Small" className="benefits-small-image" />
-                        </div>
-                    </div>
                 </div>
 
             
@@ -403,10 +407,10 @@ function StudyPermit() {
                             accompany you to Canada. Your spouse may be eligible for an open work permit, 
                             and your children may attend school.</p>
 
-                        <h1 className="mb-4">Why Choose Canada for Your Studies?</h1>
+                        <h5 className="mb-4">Why Choose Canada for Your Studies?</h5>
                         <p className="mb-4">Canada offers a high standard of education and a welcoming 
                             environment for international students.</p>
-                        <h1>Benefits of Studying in Canada:</h1>
+                        <h5>Benefits of Studying in Canada:</h5>
                         <p className='d-flex align-items-baseline'>
                             <i className="fa fa-check text-primary me-3"></i>
                             <span>
@@ -440,8 +444,7 @@ function StudyPermit() {
 
                     <div className="apply-right-div">
                         <div className="benefits-image-container">
-                            <img src={s7} alt="Large" className="benefits-large-image" />
-                            <img src={s8} alt="Small" className="benefits-small-image" />
+                            <img src={s13} alt="Large" className="benefits-large-image" />
                         </div>
                     </div>
                 </div>

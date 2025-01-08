@@ -17,6 +17,7 @@ import HomepageMap from "./components/HomepageMap";
 import StudyPermit from "./components/StudyPermit";
 import PNP from "./components/PNP";
 import VisitorVisa from "./components/VisitorVisa";
+import StartUpVisa from "./components/StartUpVisa";
 import WorkAndTravelPermit from "./components/WorkAndTravelPermit";
 import About from "./components/About";
 import LMIA from "./components/LMIA";
@@ -70,6 +71,7 @@ function App() {
           <Route path="StudyPermit" element={<StudyPermit/>}/>
           <Route path="PNP" element={<PNP/>}/>
           <Route path="VisitorVisa" element={<VisitorVisa/>}/>
+          <Route path="StartUpVisa" element={<StartUpVisa/>}/>
           <Route path="FamilySponsorship" element={<FamilySponsorship/>}/>
           <Route path="ExpressEntry" element={<ExpressEntry/>}/>
           <Route path="WorkAndTravelPermit" element={<WorkAndTravelPermit/>}/>

@@ -6,8 +6,11 @@ import s3 from "../images/emp-veri.jpg";
 import s4 from "../images/lab-mark-needs.jpg";
 import s5 from "../images/lab-mrk.jpg";
 import s6 from "../images/temp-work-perm.jpg";
-import s7 from "../images/apply-small.jpg";
-import s8 from "../images/apply-large.jpg";
+import s7 from "../images/vv1.jpg";
+import s8 from "../images/vv2.jpg";
+import s9 from "../images/vv3.jpg";
+import s10 from "../images/vv4.jpg";
+
 
 function VisitorVisa() {
   const [selectedVisa, setSelectedVisa] = useState('VisitorVisa');
@@ -266,19 +269,9 @@ function VisitorVisa() {
                         </p>
         </div>
         <div className="apply-right-div">
-            <div className="apply-image-wrapper">
-            {isSwapped ? (
-              <>
-                <img src={s7} alt="Small Image" className="apply-large-image" />
-                <img src={s8} alt="Large Image" className="apply-small-image" />
-              </>
-            ) : (
-              <>
-                <img src={s8} alt="Large Image" className="apply-large-image" />
-                <img src={s7} alt="Small Image" className="apply-small-image" />
-              </>
-            )}
-            </div>
+          <div className="benefits-image-container">
+            <img src={s8} alt="Large" className="benefits-large-image" />
+          </div>
         </div>
       </div>
 
@@ -389,8 +382,8 @@ function VisitorVisa() {
 
         <div className="apply-right-div">
             <div className="benefits-image-container">
-                <img src={s7} alt="Large" className="benefits-large-image" />
-                <img src={s8} alt="Small" className="benefits-small-image" />
+                <img src={s9} alt="Large" className="benefits-large-image" />
+                <img src={s10} alt="Small" className="benefits-small-image" />
             </div>
         </div>
       </div>

@@ -1,0 +1,149 @@
+
+.planet-container {
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 5px -3px 10px 3px #5e90f1;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    z-index: 1;
+    margin-left: 200px;
+}
+.night {
+    animation: rotate-night 80s linear infinite;
+    background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg);
+    background-size: 200%;
+    height: 500px;
+    position: absolute;
+    width: 500px;
+    z-index: 2;
+}
+.day {
+    animation: rotate-day 80s linear infinite;
+    background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg);
+    background-size: 200%;
+    border-left: solid 1px black;
+    border-radius: 50%;
+    box-shadow: 5px 0 20px 10px #040615 inset; 
+    height: 500px;
+    margin-left: 110px;
+    position: absolute;
+    width: 500px;
+    z-index: 3;
+}
+.clouds {
+    animation: rotate-day 50s linear infinite, spin-clouds 100s ease infinite;
+    background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg);
+    background-size: 200%;
+    border-radius: 50%;    
+    box-shadow: 5px 0 20px 10px #040615 inset, -9px 0px 20px 10px #5e90f1 inset;
+    height: 500px;
+    margin-left: 100px;
+    opacity: 0.45;
+    position: absolute;
+    width: 500px;
+    z-index: 4;
+}
+.inner-shadow {
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: -5px 0 10px 1px #152b57 inset, 5px 0 10px 1px #040615 inset;
+    height: 500px;
+    margin-left: 0;
+    position: absolute;
+    width: 500px;
+    z-index: 5;
+}
+
+@keyframes rotate-day {
+    0% { background-position: 120% 0; }
+    100% { background-position: -80% 0; }
+}
+@keyframes rotate-night {
+    0% { background-position: calc(120% + 120px) 0; }
+    100% { background-position: calc(-80% + 120px) 0; }
+}
+@keyframes spin-clouds {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.hologram-container {
+    position: relative;
+    width: 90%; /* Adjust based on your image size */
+    height: 420px; /* Adjust based on your image size */
+    overflow: hidden;
+    perspective: 1000px;
+  }
+
+  /* Base styling for each image */
+  .hologram-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+    backface-visibility: hidden;
+  }
+
+  /* Keyframes for the rotation */
+  @keyframes hologram-rotation {
+    0%, 20% { opacity: 1; transform: rotateX(0deg); }
+    40%, 100% { opacity: 0; transform: rotateX(-90deg); }
+  }
+
+  /* Apply animations to each image with delay */
+  .hologram-image:nth-child(1) { animation: hologram-rotation 5s linear infinite; }
+  .hologram-image:nth-child(2) { animation: hologram-rotation 5s linear infinite 1s; }
+  .hologram-image:nth-child(3) { animation: hologram-rotation 5s linear infinite 2s; }
+  .hologram-image:nth-child(4) { animation: hologram-rotation 5s linear infinite 3s; }
+  .hologram-image:nth-child(5) { animation: hologram-rotation 5s linear infinite 4s; }
+
+
+  .picasa-container {
+    position: relative;
+    width: 90%; /* Adjust based on your image size */
+    height: 420px; /* Keep square initially */
+    overflow: hidden;
+  }
+
+  /* Base styling for each image */
+  .doublefaceimages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0; /* Start as square */
+    opacity: 0;
+    transition: opacity 0.5s, border-radius 1.5s;
+    animation: picasa-rotation 8s linear infinite;
+  }
+
+  /* Animation steps */
+  @keyframes picasa-rotation {
+    0% {
+      opacity: 1;
+      border-radius: 0; /* Square */
+    }
+    25% {
+      border-radius: 50%; /* Transition to circle */
+      opacity: 1;
+    }
+    50% {
+      opacity: 0; /* Fade out */
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .doublefaceimages:nth-child(1) { animation-delay: 0s; }
+  .doublefaceimages:nth-child(2) { animation-delay: 2s; }
+  .doublefaceimages:nth-child(3) { animation-delay: 4s; }
+  .doublefaceimages:nth-child(4) { animation-delay: 6s; }

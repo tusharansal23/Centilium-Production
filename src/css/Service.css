@@ -1,4 +1,5 @@
 /* Back link styles */
+
 .back-link {
     display: inline-flex;
     align-items: center;
@@ -443,4 +444,121 @@
   opacity: 1; /* Show */
 }
 
-  
+.arrival-container {
+  position: relative;
+  width: 100%; /* Adjust based on your image size */
+  height: 420px;
+  overflow: hidden;
+}
+
+/* Styling for each sliding image */
+.sliding-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: slideInOut 9s ease-in-out infinite;
+}
+
+/* Slide in and out animation */
+@keyframes slideInOut {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0); /* Slide into view */
+    opacity: 1;
+  }
+  33% {
+    transform: translateX(0); /* Pause briefly in the center */
+    opacity: 1;
+  }
+  43% {
+    transform: translateX(100%); /* Slide out to the right */
+    opacity: 0;
+  }
+  100% {
+    opacity: 0; /* Remain off-screen */
+  }
+}
+
+/* Delay each image to create the sequence effect */
+.sliding-image:nth-child(1) { animation-delay: 0s; }
+.sliding-image:nth-child(2) { animation-delay: 3s; }
+.sliding-image:nth-child(3) { animation-delay: 6s; }
+
+.workStudy-container {
+  position: relative;
+  width: 90%;
+  height: 420px;
+  overflow: hidden;
+  perspective: 1000px; /* Adds 3D effect for rotation */
+}
+
+/* Animated rotating image */
+.rotating-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/sp6.jpg'); /* Initial image */
+  animation: rotateImage 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes rotateImage {
+  0% {
+    transform: rotateY(0); /* Starting position */
+    background-image: url('../images/sp6.jpg');
+  }
+  50% {
+    transform: rotateY(180deg); /* Rotate halfway and switch image */
+    background-image: url('../images/sp7.jpg');
+  }
+  100% {
+    transform: rotateY(360deg); /* Full rotation, back to first image */
+    background-image: url('../images/sp6.jpg');
+  }
+}
+
+.cube-container {
+  position: relative;
+  width: 80%;
+  height: 350px;
+  perspective: 800px; /* Adds 3D perspective */
+}
+
+/* Cube to hold all faces */
+.cube {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  animation: rotateCube 12s infinite linear;
+}
+
+/* Styling for each cube face */
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Position each face of the cube */
+.face1 { transform: rotateY(0deg) translateZ(100px); background-image: url('../images/sv1.jpg'); }
+.face2 { transform: rotateY(90deg) translateZ(100px); background-image: url('../images//sv2.jpg'); }
+.face3 { transform: rotateY(180deg) translateZ(100px); background-image: url('../images/sv3.jpg'); }
+.face4 { transform: rotateY(270deg) translateZ(100px); background-image: url('../images/sv4.jpg'); }
+
+/* Animation for continuous rotation */
+@keyframes rotateCube {
+  0% { transform: rotateY(0deg); }
+  25% { transform: rotateY(90deg); }
+  50% { transform: rotateY(180deg); }
+  75% { transform: rotateY(270deg); }
+  100% { transform: rotateY(360deg); }
+}

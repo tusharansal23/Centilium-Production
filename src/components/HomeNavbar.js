@@ -71,11 +71,11 @@ const HomeNavbar = () => {
         <div className="container-fluid nav-bar bg-transparent">
             <nav className="navbar navbar-expand-lg navbar-light py-0 px-4 navbar-bg-transparent">
                 <a href="index.html" className="navbar-brand d-flex align-items-center text-center">
-                    <div className="icon p-2 me-2">
+                    <div className="icon logo-box p-2 me-2">
                         <img className="img-fluid navbar-img-container" src={logo} alt="Icon" />
                     </div>
                     <h2 className="m-0 text-primary">Centilium</h2>
-                    <h6 className='mtinpx-5'>Immigration</h6>
+                    <h6 className='mtinpx-15'>Immigration</h6>
                 </a>
                 <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span className="navbar-toggler-icon"></span>
@@ -106,7 +106,7 @@ const HomeNavbar = () => {
                                             onMouseLeave={() => handleSubDropdown(item, false)}
                                         >
                                             {item && ( // Only render the link if the item is defined
-                                                <Link to={`./${item.replace(' ', '')}`} className={`dropdown-item ${index % 2 === 0 ? 'nav-item-left' : 'nav-item-right'}`}>
+                                                <Link to={`./${item.replace(/\s+/g, '')}`} className={`dropdown-item ${index % 2 === 0 ? 'nav-item-left' : 'nav-item-right'}`}>
                                                     {item}
                                                 </Link>
                                             )}

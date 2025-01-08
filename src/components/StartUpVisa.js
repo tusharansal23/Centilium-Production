@@ -6,7 +6,7 @@ import s3 from "../images/emp-veri.jpg";
 import s4 from "../images/lab-mark-needs.jpg";
 import s5 from "../images/lab-mrk.jpg";
 import s6 from "../images/temp-work-perm.jpg";
-import s7 from "../images/apply-small.jpg";
+import s7 from "../images/sv5.jpg";
 import s8 from "../images/apply-large.jpg";
 
 function StartUpVisa() {
@@ -240,19 +240,14 @@ function StartUpVisa() {
                         </p>
         </div>
         <div className="apply-right-div">
-            <div className="apply-image-wrapper">
-            {isSwapped ? (
-              <>
-                <img src={s7} alt="Small Image" className="apply-large-image" />
-                <img src={s8} alt="Large Image" className="apply-small-image" />
-              </>
-            ) : (
-              <>
-                <img src={s8} alt="Large Image" className="apply-large-image" />
-                <img src={s7} alt="Small Image" className="apply-small-image" />
-              </>
-            )}
-            </div>
+        <div class="cube-container">
+          <div class="cube">
+            <div class="face face1"></div>
+            <div class="face face2"></div>
+            <div class="face face3"></div>
+            <div class="face face4"></div>
+          </div>
+        </div>
         </div>
       </div>
 

@@ -53,7 +53,7 @@ const HomepageService = () => {
   }, [images.length]);
 
   return (
-    <div className="container collage-container">
+    <div className="container collage-container bg-light rounded p-3">
       {/* Image Carousel */}
       <div className="collage-carousel">
         {images.map((img, index) => (

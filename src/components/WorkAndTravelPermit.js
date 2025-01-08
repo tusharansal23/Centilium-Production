@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import "../css/Service.css";
-import s1 from "../images/service-lmia.jpg";
+import s1 from "../images/wt2.jpg";
 import s2 from "../images/emp-ver.jpg";
 import s3 from "../images/emp-veri.jpg";
 import s4 from "../images/lab-mark-needs.jpg";
 import s5 from "../images/lab-mrk.jpg";
 import s6 from "../images/temp-work-perm.jpg";
-import s7 from "../images/apply-small.jpg";
-import s8 from "../images/apply-large.jpg";
-
+import s7 from "../images/wt3.jpg";
+import s8 from "../images/wt4.jpg";
+import s9 from "../images/wt5.jpg";
+import s10 from "../images/wt6.jpg";
+import s11 from "../images/wt7.jpg";
+import s12 from "../images/wt8.jpg";
+import s13 from "../images/wt10.jpg";
+import s14 from "../images/wt11.jpg";
+import s15 from "../images/wt12.jpg";
+import s16 from "../images/wt13.jpg";
+import RotatingEarth from "./RotatingEarth";
 function WorkAndTravelPermit() {
   const [selectedVisa, setSelectedVisa] = useState('WorkAndTravelPermit');
   const [isSwapped, setIsSwapped] = useState(false);
@@ -85,7 +93,8 @@ function WorkAndTravelPermit() {
 
           {/* Right side (Image) */}
           <div className="image-content lg:w-1/2 flex justify-center mt-10 lg:mt-0">
-            <img className="mx-auto lmia-image" src={s1} alt="" />
+            {/* <img className="mx-auto lmia-image" src={s1} alt="" /> */}
+            <RotatingEarth/>
           </div>
         </div>
       </div>
@@ -201,7 +210,7 @@ function WorkAndTravelPermit() {
 
                 <div className="apply-right-div">
                     <div className="zoom-image-container">
-                        <img src={s7} alt="Zooming Image" className="zoom-image" />
+                        <img src={s1} alt="Zooming Image" className="zoom-image" />
                     </div>
                 </div>
 
@@ -334,12 +343,23 @@ function WorkAndTravelPermit() {
                 <div className="apply-right-div">
                     <div className="benefits-image-container">
                         <img src={s7} alt="Large" className="benefits-large-image" />
-                        <img src={s8} alt="Small" className="benefits-small-image" />
+                        {/* <img src={s8} alt="Small" className="benefits-small-image" /> */}
                     </div>
                 </div>
             </div>
 
             <div className="apply-content-wrapper mb-in-perc-7">
+                
+                <div className="apply-right-div">
+                    <div class="hologram-container">
+                        <img src={s8} alt="Image 1" className="hologram-image"/>
+                        <img src={s9} alt="Image 2" className="hologram-image"/>
+                        <img src={s10} alt="Image 3" className="hologram-image"/>
+                        <img src={s11} alt="Image 4" className="hologram-image"/>
+                        <img src={s12} alt="Image 5" className="hologram-image"/>
+                    </div>
+                </div>
+                
                 <div className="apply-left-div">
                     {/* <h3>Eligibility Criteria for LMIA</h3>
                     <h5>For Employers :</h5> */}
@@ -384,12 +404,7 @@ function WorkAndTravelPermit() {
                         </p>
                 </div>
 
-                <div className="apply-right-div">
-                    <div className="benefits-image-container">
-                        <img src={s7} alt="Large" className="benefits-large-image" />
-                        <img src={s8} alt="Small" className="benefits-small-image" />
-                    </div>
-                </div>
+                
             </div>
 
             <div className="apply-content-wrapper mb-in-perc-7">
@@ -430,9 +445,11 @@ function WorkAndTravelPermit() {
                 </div>
 
                 <div className="apply-right-div">
-                    <div className="benefits-image-container">
-                        <img src={s7} alt="Large" className="benefits-large-image" />
-                        <img src={s8} alt="Small" className="benefits-small-image" />
+                    <div class="picasa-container">
+                        <img src={s13} alt="Image 1" class="doublefaceimages"/>
+                        <img src={s14} alt="Image 2" class="doublefaceimages"/>
+                        <img src={s15} alt="Image 3" class="doublefaceimages"/>
+                        <img src={s16} alt="Image 4" class="doublefaceimages"/>
                     </div>
                 </div>
             </div>
