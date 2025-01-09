@@ -31,7 +31,7 @@ const Footer = () => {
                             Brampton ON
                         </p>
                         <p className="mb-2"><i className="fa fa-phone-alt me-3"></i>+1 289-500-7010</p>
-                        <p className="mb-2 d-flex align-items-baseline"><i className="fa fa-envelope me-3"></i>team@centiliumimmigration.com</p>
+                        <p className="mb-2 d-flex align-items-baseline"><i className="fa fa-envelope me-3"></i>Meghaansal@outlook.com</p>
                         <div className="d-flex pt-2">
                             <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-twitter"></i></a>
                             <a className="btn btn-outline-light btn-social" href=""><i className="fab fa-facebook-f"></i></a>
