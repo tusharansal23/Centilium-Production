@@ -10,3 +10,8 @@
 .bg-footer {
     background-color: #0e2e50!important;
 }
+.ql-container {
+    min-height: 400px !important;
+    height: auto !important;
+    max-height: 500px !important;
+}

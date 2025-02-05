@@ -257,7 +257,9 @@
   z-index: 1;
 }
 
-
+.blog-height {
+  height: 400px;
+}
 /*** Category ***/
 .cat-item div {
   background: #FFFFFF;

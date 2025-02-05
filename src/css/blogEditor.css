@@ -1,0 +1,11 @@
+.ql-container {
+    min-height: 400px !important;
+    height: auto !important;
+    max-height: 500px !important;
+}
+.blog-height {
+    height: 600px;
+}
+.editor-height {
+    height: 400px;
+}
