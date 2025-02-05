@@ -32,6 +32,7 @@ import BlogEditor from "./components/BlogEditor";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import HomeNavbar from "./components/HomeNavbar";
 import Main from "./js/main";
+// import { Analytics } from "@vercel/analytics/react"
 
 
 
