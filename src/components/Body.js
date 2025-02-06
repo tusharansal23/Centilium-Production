@@ -21,6 +21,7 @@ import HomepageFunfacts from './HomepageFunfacts';
 import HomepageContact from './HomepageContact';
 import HomepageReview from './HomepageReview';
 import HomepageInfo from './HomepageInfo';
+import GoogleAd from './GoogleAd';
 
 // import '../css/bootstrap.css';
 // import '../css/style.css';
@@ -59,6 +60,7 @@ const BodyContent = () => {
 
               {/*  about section  */}
 
+                  <GoogleAd />
                   <HomepageAbout />
 
               {/*  end about section */}

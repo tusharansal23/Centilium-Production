@@ -32,6 +32,7 @@ import BlogEditor from "./components/BlogEditor";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import HomeNavbar from "./components/HomeNavbar";
 import Main from "./js/main";
+import GoogleAd from "./components/GoogleAd";
 // import { Analytics } from "@vercel/analytics/react"
 
 
@@ -82,6 +83,7 @@ function App() {
           <Route path="Contact" element={<Contact/>}/>
           <Route path="Admin" element={<Admin/>}/>
           <Route path="Dashboard" element={<Dashboard/>}/>
+          <Route path="GoogleAd" element={<GoogleAd/>}/>
           {/* <Route path="Chatbot" element={<Chatbot/>}/> */}
           
           <Route path="SetUpMeeting" element={<SetUpMeeting setShowButton={setShowButton}/>}/>
