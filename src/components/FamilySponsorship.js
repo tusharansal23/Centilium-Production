@@ -239,8 +239,40 @@ function FamilySponsorship() {
                                 exceptional circumstances.
                             </span>
                         </p>
+                </div>
+                <div className="apply-right-div">
+                    <div className="apply-image-wrapper">
+                        {isSwapped ? (
+                        <>
+                            <img src={s7} alt="Small Image" className="apply-large-image" />
+                            <img src={s8} alt="Large Image" className="apply-small-image" />
+                        </>
+                        ) : (
+                        <>
+                            <img src={s8} alt="Large Image" className="apply-large-image" />
+                            <img src={s7} alt="Small Image" className="apply-small-image" />
+                        </>
+                        )}
+                    </div>
+                </div>
             </div>
             <div className="apply-content-wrapper mb-in-perc-7">
+                <div className="apply-right-div">
+                    <div className="apply-image-wrapper">
+                        {isSwapped ? (
+                        <>
+                            <img src={s7} alt="Small Image" className="apply-large-image" />
+                            <img src={s8} alt="Large Image" className="apply-small-image" />
+                        </>
+                        ) : (
+                        <>
+                            <img src={s8} alt="Large Image" className="apply-large-image" />
+                            <img src={s7} alt="Small Image" className="apply-small-image" />
+                        </>
+                        )}
+                    </div>
+                </div>
+                
                 <div className="apply-left-div">
                     {/* <h3>Eligibility Criteria for LMIA</h3>
                     <h5>For Employers :</h5> */}
@@ -278,34 +310,12 @@ function FamilySponsorship() {
                             </span>
                         </p>
                 </div>
-                <div className="apply-right-div">
-                    <div className="apply-image-wrapper">
-                        {isSwapped ? (
-                        <>
-                            <img src={s7} alt="Small Image" className="apply-large-image" />
-                            <img src={s8} alt="Large Image" className="apply-small-image" />
-                        </>
-                        ) : (
-                        <>
-                            <img src={s8} alt="Large Image" className="apply-large-image" />
-                            <img src={s7} alt="Small Image" className="apply-small-image" />
-                        </>
-                        )}
-                    </div>
-                </div>
+                
             </div>
 
 
 
             <div className="apply-content-wrapper mb-in-perc-7">
-
-                <div className="apply-right-div">
-                    <div className="zoom-image-container">
-                        <img src={s7} alt="Zooming Image" className="zoom-image" />
-                    </div>
-                </div>
-
-
                 <div className="apply-left-div">
                     {/* <h3>Eligibility Criteria for LMIA</h3>
                     <h5>For Employers :</h5> */}
@@ -351,9 +361,23 @@ function FamilySponsorship() {
                             </span>    
                         </p>
                 </div>
+
+
+                <div className="apply-right-div">
+                    <div className="zoom-image-container">
+                        <img src={s7} alt="Zooming Image" className="zoom-image" />
+                    </div>
+                </div>
+
             </div>
 
             <div className="apply-content-wrapper mb-in-perc-7">
+                <div className="apply-right-div">
+                    <div className="benefits-image-container">
+                        <img src={s7} alt="Large" className="benefits-large-image" />
+                        <img src={s8} alt="Small" className="benefits-small-image" />
+                    </div>
+                </div>
                 <div className="apply-left-div">
                     {/* <h3>Eligibility Criteria for LMIA</h3>
                     <h5>For Employers :</h5> */}
@@ -385,12 +409,6 @@ function FamilySponsorship() {
                         
                 </div>
 
-                <div className="apply-right-div">
-                    <div className="benefits-image-container">
-                        <img src={s7} alt="Large" className="benefits-large-image" />
-                        <img src={s8} alt="Small" className="benefits-small-image" />
-                    </div>
-                </div>
             </div>
 
                 <div className="apply-content-wrapper mb-in-perc-7">
@@ -424,17 +442,25 @@ function FamilySponsorship() {
                         </p>
                         
                     </div>
-
                     <div className="apply-right-div">
                         <div className="benefits-image-container">
                             <img src={s7} alt="Large" className="benefits-large-image" />
                             <img src={s8} alt="Small" className="benefits-small-image" />
                         </div>
                     </div>
+                    
+
+                    
                 </div>
 
             
                 <div className="apply-content-wrapper mb-in-perc-7">
+                    <div className="apply-right-div">
+                        <div className="benefits-image-container">
+                            <img src={s7} alt="Large" className="benefits-large-image" />
+                            <img src={s8} alt="Small" className="benefits-small-image" />
+                        </div>
+                    </div>
                     <div className="apply-left-div">
                         {/* <h3>Eligibility Criteria for LMIA</h3>
                         <h5>For Employers :</h5> */}
@@ -465,12 +491,6 @@ function FamilySponsorship() {
                         
                     </div>
 
-                    <div className="apply-right-div">
-                        <div className="benefits-image-container">
-                            <img src={s7} alt="Large" className="benefits-large-image" />
-                            <img src={s8} alt="Small" className="benefits-small-image" />
-                        </div>
-                    </div>
                 </div>
 
 
@@ -487,7 +507,6 @@ function FamilySponsorship() {
                 </div>
         
             </div>
-    </div>
     </div>
     </div>
   );
